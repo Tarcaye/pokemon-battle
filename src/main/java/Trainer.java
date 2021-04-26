@@ -2,21 +2,19 @@ import java.util.List;
 import java.util.Map;
 
 public class Trainer {
-    private String currentPokemon;
-
-    private List<String> pokemons;
 
     private Map<String, Integer> healthPointsByPokemon;
 
-    public Trainer(String currentPokemon, List<String> pokemons, Map<String, Integer> healthPointsByPokemon) {
-        this.currentPokemon = currentPokemon;
-        this.pokemons = pokemons;
+    public Trainer(Map<String, Integer> healthPointsByPokemon) {
         this.healthPointsByPokemon = healthPointsByPokemon;
     }
 
     // TODO Fonction qui prend un pokemon et des degats et les appliquent au pokemon en jeu
     public Integer receiveHit(int damage){
-        return null;
+        String currentPokemon = (String) healthPointsByPokemon.keySet().toArray()[0];
+        int remainingHP = healthPointsByPokemon.get( currentPokemon ) - damage;
+        healthPointsByPokemon.put( currentPokemon, remainingHP );
+        return remainingHP;
     }
 
     public boolean isAlive() {
