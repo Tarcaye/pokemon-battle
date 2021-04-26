@@ -13,6 +13,16 @@ class TrainerTest {
         assertThat(trainer.getStatus()).isEqualTo("KO");
     }
 
+
+    @Test
+    void a_trainer_with_a_single_pokemon_receiving_too_many_damage_is_ko() {
+        Trainer trainer = new Trainer("Pikachu", singletonList("Pikachu"), singletonMap("Pikachu", 120));
+
+        trainer.receiveHit(9001);
+
+        assertThat(trainer.getStatus()).isEqualTo("KO");
+    }
+
     @Test
     void a_trainer_with_a_single_pokemon_alive_is_alive() {
         Trainer trainer = new Trainer("Pikachu", singletonList("Pikachu"), singletonMap("Pikachu", 120));
