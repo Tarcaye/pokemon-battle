@@ -13,10 +13,6 @@ public class Trainer {
         throw new IllegalArgumentException("Not developed yet");
     }
 
-    public boolean isAlive() {
-        return false;
-    }
-
     public String getStatus() {
         return healthPointsByPokemon.values().stream()
                 .anyMatch(this::isAlive) ? "IN BATTLE" : "DEFEATED";
