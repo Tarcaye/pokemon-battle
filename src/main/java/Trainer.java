@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Map;
 
 public class Trainer {
@@ -9,12 +8,9 @@ public class Trainer {
         this.healthPointsByPokemon = healthPointsByPokemon;
     }
 
-    // TODO Fonction qui prend un pokemon et des degats et les appliquent au pokemon en jeu
-    public Integer receiveHit(int damage){
-        String currentPokemon = (String) healthPointsByPokemon.keySet().toArray()[0];
-        int remainingHP = healthPointsByPokemon.get( currentPokemon ) - damage;
-        healthPointsByPokemon.put( currentPokemon, remainingHP );
-        return remainingHP;
+    public Integer receiveHit(int damage) {
+        // TODO
+        throw new IllegalArgumentException("Not developed yet");
     }
 
     public boolean isAlive() {
@@ -23,7 +19,7 @@ public class Trainer {
 
     public String getStatus() {
         return healthPointsByPokemon.values().stream()
-                .anyMatch(this::isAlive) ? "ALIVE" : "KO";
+                .anyMatch(this::isAlive) ? "IN BATTLE" : "DEFEATED";
     }
 
     private boolean isAlive(int hp) {
