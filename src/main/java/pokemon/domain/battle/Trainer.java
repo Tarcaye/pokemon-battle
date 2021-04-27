@@ -1,3 +1,5 @@
+package pokemon.domain.battle;
+
 import java.util.Map;
 
 public class Trainer {

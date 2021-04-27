@@ -1,3 +1,5 @@
+package pokemon.domain.battle;
+
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -33,7 +35,7 @@ class TrainerTest {
 
         trainer.receiveHit(9001);
 
-        // assertThat(trainer.getStatus()).isEqualTo("DEFEATED");
+        assertThat(trainer.getStatus()).isEqualTo("DEFEATED");
     }
 
 }
